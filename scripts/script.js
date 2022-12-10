@@ -1,12 +1,11 @@
 //Get p element for current day
 var currentDayEl = $("#currentDay");
 
+//Add current date
 var currentDay = moment().format("dddd Do MMMM YYYY");
-
 currentDayEl.text(currentDay);
 
-//While loop that loops to create 9-5 timeblocks
-//For each loop, generate or build HTML timeblock row
+//Declare variable for starting time
 var startOfBusiness = moment(09, 'HH');
 var divEl = $(".container");
 
@@ -26,13 +25,23 @@ var textArea = $(".text-area");
 //Add/append save button within first row
 row.append("<button class=saveBtn></button>");
 
+// While loop that loops to create 9-5 timeblocks
+// For each loop, generate or build new HTML timeblock row
 
-// row.text(startOfBusiness.format('HHA'));
+while (startOfBusiness.hour() < 18) {
+    divEl.append("<row class=new-row></row>");
+    var newRow = $(".new-row");
+ 
+    startOfBusiness.add(1, 'hours');
+    console.log(startOfBusiness.format('HHA'));
+};
 
-// while (startOfBusiness.hour() < 18) {
-//     startOfBusiness.add(1, 'hours'); 
-//     divEl.append("<row class=new-row></row>");
-//     var newRow = $(".new-row");
-//     console.log(startOfBusiness.format('HHA'));
-//     newRow.text(startOfBusiness.format('HHA'));
-// };
+//Add/append hour, textarea and button to each new div
+newRow.append("<div class=new-hour></div>");
+newRow.append("<textarea class=text-area></textarea>");
+newRow.append("<button class=saveBtn></button>");
+
+var newHour = $(".new-hour");
+
+newHour.text(startOfBusiness.format("HHA"));
+console.log(startOfBusiness.format("HHA"));
