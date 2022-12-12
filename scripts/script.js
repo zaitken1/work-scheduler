@@ -26,7 +26,7 @@ while (startOfBusiness.hour() < 18) {
     //Add/append hour, textarea and button to each row
     divEl.append('<row class=hour>' + startOfBusiness.format('ha') + '</row>');
     divEl.append('<textarea class=text-area id="' + id +'"</textarea>');
-    divEl.append('<button class=saveBtn></button>');
+    divEl.append('<button class=saveBtn>Save</button>');
 
     //Fetch newly created HTML elements using class
     var hour = $('.hour');
@@ -65,22 +65,19 @@ for (i = 0; i < idArray.length; i++) {
     }
 }
 
-// if statement within an if statement to only add class to textareas with id lower than currentTime
+//Add event listener to saveBtn to get value from textArea and save to local storage
+    $(document).ready(function () {
+            
+        //This function is called when the button is clicked
+        saveBtn.click(function () {
+            
+            // val() method is used to get the values from textarea and store in toDoItem variable
+            var toDoItem = textArea.val();
+            alert(toDoItem);
+})
+    });
 
 
-// //Check if timeblock is past, present or future - not working
-// var now = moment().format('h');
-// // console.log(now);
-
-// function calTime(){
-//     if (startOfBusiness.isBefore(now)){
-//         textArea.css('bacground-color', 'grey');
-//     }
-// }
-
-// If textArea ID is < currentTime, add class 'past' to textArea
-// If textArea ID is == currentTime, add class 'present' to textArea
-// If textArea ID is > currentTime, add class 'future' to textArea
 
 
 
