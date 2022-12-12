@@ -54,7 +54,7 @@ $('textarea').each(function () {
 
 //Iterate over the idArray and compare index value to currentTime
 for (i = 0; i < idArray.length; i++) {
-
+    var textArea = $(`#${idArray[i]}`);
 
     if (idArray[i] == currentTime) {
         textArea.addClass("present");
