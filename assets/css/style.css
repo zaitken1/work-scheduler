@@ -5,12 +5,10 @@ body {
 }
 
 textarea {
-  background: transparent;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  border: 1px solid black;
 }
 
 .jumbotron {
@@ -31,22 +29,17 @@ textarea {
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  padding-top: 30px;
-}
-
-.row, .new-row {
   white-space: pre-wrap;
+  padding-top: 30px;
+  margin-bottom: 30px;
   height: 80px;
   border-top: 1px solid white;
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 5fr 0.5fr;
+  grid-template-rows: repeat(9, 100px);
   grid-template-areas: 
-    "hour, text-area, text-area, text-area, textArea, saveBtn";
+    "hour textArea saveBtn";
 }
 
 .hour {
@@ -80,7 +73,6 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-  width: 100%;
 }
 
 .saveBtn i:hover {
