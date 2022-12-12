@@ -67,29 +67,57 @@ for (i = 0; i < idArray.length; i++) {
     }
 }
 
-// //Add event listener to saveBtn to get value from textArea and save to local storage
+var finalValues = [];
+
+//Add event listener to saveBtn to get value from textArea and save to local storage
 $(document).ready(function () {
 
-    //         //This function is called when the button is clicked
+    //This function is called when the button is clicked
     saveBtn.click(function (event) {
         var saveButton = $(event.target);
         var textArea = saveButton.siblings(".text-area");
-        console.log(textArea);
+        
+        finalValues = [
+            $('#9').val(),
+            $('#10').val(),
+            $('#11').val(),
+            $('#12').val(),
+            $('#13').val(),
+            $('#14').val(),
+            $('#15').val(),
+            $('#16').val(),
+            $('#17').val(),
+        ]
 
-        //             // val() method is used to get the values from textarea and store in toDoItem variable
-        var text = textArea.val();
-        alert(text);
+        // replace the local storage with the old already input value and the new entries
+        finalTextValues = (finalValues);
 
-        // 9am: text,
+        //Push values to local storage
+        localStorage.setItem('task', JSON.stringify(finalTextValues));
 })
 });
 
-    // var userData = [
-    //     {
-    //     initials: value,
-    //     score: finalScore
-    //     }
-    // ];
+//Load saved user input on refresh
+var getTasks = localStorage.getItem('task') || [];
 
+getTasks = JSON.parse(getTasks);
 
+console.log(getTasks[0]);
 
+$("#9").text(getTasks[0]);
+
+$("#10").text(getTasks[1]);
+
+$("#11").text(getTasks[2]);
+
+$("#12").text(getTasks[3]);
+
+$("#13").text(getTasks[4]);
+
+$("#14").text(getTasks[5]);
+
+$("#15").text(getTasks[6]);
+
+$("#16").text(getTasks[7]);
+
+$("#17").text(getTasks[8]);
