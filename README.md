@@ -1,87 +1,29 @@
-# Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
-## Your Task
+## Description
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+I have created a simple calendar application that allows a user to save events for each hour of the day. The events will persist on browser refresh by storing the values in localStorage. The colour of the textarea elements update based on whether that time has passed, is current or is in the future.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+I have used the following tools and methods to create this page:
 
-## User Story
-
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-The app should:
-
-* Display the current day at the top of the calender when a user opens the planner.
- 
-* Present timeblocks for standard business hours when the user scrolls down.
- 
-* Color-code each timeblock based on past, present, and future when the timeblock is viewed.
- 
-* Allow a user to enter an event when they click a timeblock
-
-* Save the event in local storage when the save button is clicked in that timeblock.
-
-* Persist events between refreshes of a page
-
-The following animation demonstrates the application functionality:
-
-![A user clicks on slots on the color-coded calendar and edits the events.](./images/05-third-party-apis-homework-demo.gif)
+* Moment.js to dynamically insert the current date - this dynamically updates each day
+* While loop and JQuery to dynamically create HTML timeblocks with rows and nested divs, textareas and buttons
+* CSS Flexbox and Grid to style and layout as desired
+* For loop to iterate over ID values and compare value against current hour
+* If statements to add classes to CSS ID selectors to change colour of text area background based on if textarea ID is equal to, greater than, or smaller than current hour.
+* JQuery click function to add event listener to save button
+* .click() event listener on save button saves the value within corresponding text area to localStorage
+* JSON.stringiy and JSON.parse to turn array into a string when putting in local storage and fetch back as array
 
 
-## Grading Requirements
+## Screenshot
 
-This homework is graded based on the following criteria: 
+![Screenshot of work day scheduler application](./assets/images/screenshot.png)
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the above acceptance criteria plus the following:
+## Links
 
-  * Uses a date utility library to work with date and time
+Live application: https://zaitken1.github.io/work-scheduler/
 
-### Deployment: 32%
+GitHub repository: https://github.com/zaitken1/work-scheduler
 
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
